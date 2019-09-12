@@ -1,5 +1,5 @@
 resource "aws_cognito_identity_pool" "identity_pool" {
-  identity_pool_name                = "${var.namespace}-identity-pool"
+  identity_pool_name                = "${var.namespace}IdentityPool"
   allow_unauthenticated_identities  = true
   cognito_identity_providers        {
       client_id     = "${var.client_id}"
