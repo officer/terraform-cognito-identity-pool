@@ -1,7 +1,9 @@
 data "aws_iam_policy_document" "assume_role" {
   statement {
       effect = "Allow"
-      actions = "sts:AssumeRoleWithWebIdentity"
+      actions = [
+        "sts:AssumeRoleWithWebIdentity"
+      ]
       condition {
           test      = "StringEquals"
           variable  = "cognito-identity.amazonaws.com:aud"

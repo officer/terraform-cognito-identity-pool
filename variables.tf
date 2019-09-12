@@ -2,7 +2,7 @@
 variable "namespace" {
   description = "(Optional) namespace of the resources default to lambda"
   type        = "string"
-  default     = "lambda"
+  default     = "cup"
 }
 
 variable "tags" {
