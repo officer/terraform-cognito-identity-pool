@@ -13,6 +13,19 @@ variable "tags" {
   }
 }
 
+# Cognito Role Configuration
+variable "authenticated_role" {
+  description = "(Optional) IAM Role for authenticated user"
+  type        = "string"
+  default     = "none"
+}
+
+variable "unauthenticated_role" {
+  description = "(Optional) IAM Role for unauthenticated user"
+  type        = "string"
+  default     = "none"
+}
+
 # Cognito User Pools configuration
 variable "user_pool_id" {
   description = "(Required) The user pool id"

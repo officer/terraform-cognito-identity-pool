@@ -12,8 +12,8 @@ resource "aws_cognito_identity_pool_roles_attachment" "unauthenticated_role" {
   identity_pool_id  = "${aws_cognito_identity_pool.identity_pool.id}"
 
   roles = {
-      "authenticated"   = "${aws_iam_role.authenticated_role.arn}"
-      "unauthenticated" = "${aws_iam_role.unauthenticated_role.arn}"
+      "authenticated"   = "${var.authenticated_role == "none"? aws_iam_role.authenticated_role.arn : var.authenticated_role}"
+      "unauthenticated" = "${var.unauthenticated_role == "none"? aws_iam_role.unauthenticated_role.arn : var.unauthenticated_role}"
   }
 }
 
